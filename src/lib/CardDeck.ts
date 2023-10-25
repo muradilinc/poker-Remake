@@ -1,5 +1,5 @@
 type CommonType = {[key: string]: string};
-type card = {
+export type Card = {
   suit: string;
   rank: string;
 };
@@ -28,7 +28,7 @@ class CardDeck {
     ACE: 'A',
   };
 
-  cards: card[] = [];
+  cards: Card[] = [];
 
   constructor() {
     for (const suit in CardDeck.SUITS) {

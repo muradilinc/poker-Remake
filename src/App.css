@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+
+.App.cards {
+  width: 430px;
+  margin: 20px auto;
+}
+
+.App.cards .table {
+  margin-top: 20px;
+}
+
+.WinTable {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%;
+  background: #323232;
+  border: 2px solid yellow;
+  color: yellow;
+}
+
+.WinTable td {
+  padding: 0 5px;
+  font-size: 14px;
+  border: 2px solid yellow;
+  border-bottom: none;
+  border-top: none;
+  text-align: right;
+}
+
+.WinTable tr td:first-child {
+  text-align: left;
+}
+
+.WinTable tr.CurrentWin td {
+  background: indianred;
+}
+.WinTable .SelectedBet {
+  background: indianred;
+}
+.WinTable tr.CurrentWin .SelectedBet {
+  color: white;
+  font-weight: bold;
+}
+
+.CurrentOutcome {
+  margin: 20px 0;
+}
+
+.StatusBar div {
+  display: inline-block;
+  width: 33.3%;
+}
+.StatusBar .Bet {
+  text-align: left;
+}
+.StatusBar .Credits {
+  text-align: right;
+}
+.Buttons button {
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: top;
+  width: 55px;
+  height: 55px;
+  margin: 10px;
+}

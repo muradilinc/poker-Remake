@@ -3,6 +3,9 @@ import './Card.css';
 
 interface Props {
   suit: string;
+  rank: string;
+  back: boolean;
+  clicked: React.MouseEventHandler;
 }
 
 type Suit = {
@@ -19,23 +22,23 @@ const suits: Suit = {
   S: {className: 'Card-spades', symbol: '♠'}
 };
 
-const Card: React.FC<Props> = ({suit}) => {
+const Card: React.FC<Props> = ({suit, rank, back, clicked}) => {
   const suitClass = suits[suit].className;
   const symbol = suits[suit].symbol;
 
   const cardClasses = [
     'Card',
-    'Card-rank-' + props.rank.toLowerCase(),
+    'Card-rank-' + rank.toLowerCase(),
     suitClass,
   ];
 
-  if (props.back) {
+  if (back) {
     cardClasses.push('Card-back');
   }
 
   return (
-    <div className={cardClasses.join(' ')} onClick={props.clicked}>
-      <span className="Card-rank">{props.rank.toUpperCase()}</span>
+    <div className={cardClasses.join(' ')} onClick={clicked}>
+      <span className="Card-rank">{rank.toUpperCase()}</span>
       <span className="Card-suit">{symbol}</span>
     </div>
   );
