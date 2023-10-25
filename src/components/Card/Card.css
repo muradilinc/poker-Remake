@@ -1,0 +1,340 @@
+.Card {
+  display: inline-block;
+  width: 3.3em;
+  height: 4.6em;
+  position: relative;
+  border: 1px solid #666;
+  border-radius: .3em;
+  padding: .25em;
+  margin: 0 .5em .5em 0;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  box-shadow: .2em .2em .5em #333;
+  vertical-align: top;
+}
+
+.Card.Card-back {
+  text-indent: -4000px;
+  background: #ccc 0 0 url(data:image/gif;base64,R0lGODlhJAAkAJEAAOjFsezdztOKbL5QKCH5BAAAAAAALAAAAAAkACQAAAL/HC4RAqm/mmLHyHmAbczB11Ea8ombJKSgKo6Z17pXFznmS1JptiX0z3vVhpEKDoUIkoa0olGIUeZUk1RI6Yn2mh/FDAt6frOrRRTqXPpsVLYugzxaVy+YcBdnoWPZOT0E4eckQtZFZBjWoHixQFWl6Nhol6R2p1Okt5TGaEWZA6fjiMdhZgPHeWrTWGVq+jTZg1HYyAEWKLYzmyiGKoUimilz+YYryyTlg5RcDJSAbNx0Q7lMcbIGEyzTK8zVdfVaImzs/QV+prYqWWW2ObkoOApM/Em/rUlIm7fijs8a2EEKEaZ3AsMUgneEU6RcpJbZ27aGHkAO2Ors8xQH1IR0Bn5YnOtVAAA7) repeat !important;
+}
+.Card.Card-back .Card-rank,
+.Card.Card-back .Card-suit {
+  display: none !important;
+}
+/* suit colours
+********************************************************************/
+
+.Card.Card-diams {
+  color: #f00 !important;
+}
+.Card.Card-hearts {
+  color: #f00 !important;
+}
+.Card.Card-spades {
+  color: #000 !important;
+}
+.Card.Card-clubs {
+  color: #000 !important;
+}
+.Card.Card-joker {
+  color: #000 !important;
+}
+.Card.Card-joker.Card-big {
+  color: #f00 !important;
+}
+
+/* inner bits
+********************************************************************/
+
+/* top left main info (rank and suit) */
+
+.Card .Card-rank,
+.Card .Card-suit {
+  display: block;
+  line-height: 1;
+  text-align: left;
+}
+
+.Card .Card-suit {
+  line-height: .7;
+}
+
+/* joker */
+
+.Card .Card-rank:after,
+.Card.Card-joker .Card-rank:before {
+  position: absolute;
+  top: .25em;
+  left: .25em;
+  background: #fff;
+}
+
+.Card.Card-joker .Card-rank {
+  position: absolute;
+}
+
+.Card.Card-joker .Card-rank:before {
+  content: "\2605";
+  top: 0;
+  left: 0;
+}
+
+.Card.Card-joker .Card-suit {
+  text-indent: -9999px;
+}
+
+/* inner multiple suits */
+.Card .Card-suit:after {
+  display: block;
+  margin-top: -.8em;
+  text-align: center;
+  white-space: pre;
+  line-height: .9;
+  font-size: 1.3em;
+  word-spacing: -.05em;
+}
+
+/* make the hearts and clubs symbols fit, because they are a bit bigger than the others */
+.Card.Card-hearts .Card-suit:after {
+  word-spacing: -.15em;
+}
+.Card.Card-hearts.Card-rank-10 .Card-suit:after {
+  word-spacing: -.05em;
+  letter-spacing: -.1em;
+}
+.Card.Card-clubs.Card-rank-10 .Card-suit:after {
+  word-spacing: -.15em;
+}
+
+/* 8, 9, 10 are the most crowded */
+.Card.Card-rank-8 .Card-suit:after,
+.Card.Card-rank-9 .Card-suit:after {
+  letter-spacing: -.075em;
+}
+.Card.Card-rank-10 .Card-suit:after {
+  letter-spacing: -.1em;
+}
+.Card.Card-clubs .Card-suit:after {
+  letter-spacing: -.125em;
+}
+
+/*____________ symbols in the middle (suits, full) ____________*/
+
+/* diamonds */
+.Card.Card-rank-2.Card-diams .Card-suit:after {
+  content: "\2666\A\A\2666";
+}
+.Card.Card-rank-3.Card-diams .Card-suit:after {
+  content: "\2666\A\2666\A\2666";
+}
+.Card.Card-rank-4.Card-diams .Card-suit:after {
+  content: "\2666\00A0\00A0\00A0\2666\A\A\2666\00A0\00A0\00A0\2666";
+}
+.Card.Card-rank-5.Card-diams .Card-suit:after {
+  content: "\2666\00A0\00A0\00A0\2666\A\2666\A\2666\00A0\00A0\00A0\2666";
+}
+.Card.Card-rank-6.Card-diams .Card-suit:after {
+  content: "\2666\00A0\00A0\00A0\2666\A\2666\00A0\00A0\00A0\2666\A\2666\00A0\00A0\00A0\2666";
+}
+.Card.Card-rank-7.Card-diams .Card-suit:after {
+  content: "\2666\00A0\00A0\2666\A\2666\00A0\2666\00A0\2666\A\2666\00A0\00A0\2666";
+}
+.Card.Card-rank-8.Card-diams .Card-suit:after {
+  content: "\2666\00A0\2666\00A0\2666\A\2666\00A0\00A0\2666\A\2666\00A0\2666\00A0\2666";
+}
+.Card.Card-rank-9.Card-diams .Card-suit:after {
+  content: "\2666\00A0\2666\00A0\2666\A\2666\00A0\2666\00A0\2666\A\2666\00A0\2666\00A0\2666";
+}
+.Card.Card-rank-10.Card-diams .Card-suit:after {
+  content: "\2666\00A0\2666\00A0\2666\A\2666\00A0\2666\00A0\2666\00A0\2666\A\2666\00A0\2666\00A0\2666";
+}
+
+/* hearts */
+.Card.Card-rank-2.Card-hearts .Card-suit:after {
+  content: "\2665\A\A\2665";
+}
+.Card.Card-rank-3.Card-hearts .Card-suit:after {
+  content: "\2665\A\2665\A\2665";
+}
+.Card.Card-rank-4.Card-hearts .Card-suit:after {
+  content: "\2665\00A0\00A0\00A0\2665\A\A\2665\00A0\00A0\00A0\2665";
+}
+.Card.Card-rank-5.Card-hearts .Card-suit:after {
+  content: "\2665\00A0\00A0\00A0\2665\A\2665\A\2665\00A0\00A0\00A0\2665";
+}
+.Card.Card-rank-6.Card-hearts .Card-suit:after {
+  content: "\2665\00A0\00A0\00A0\2665\A\2665\00A0\00A0\00A0\2665\A\2665\00A0\00A0\00A0\2665";
+}
+.Card.Card-rank-7.Card-hearts .Card-suit:after {
+  content: "\2665\00A0\00A0\2665\A\2665\00A0\2665\00A0\2665\A\2665\00A0\00A0\2665";
+}
+.Card.Card-rank-8.Card-hearts .Card-suit:after {
+  content: "\2665\00A0\2665\00A0\2665\A\2665\00A0\00A0\2665\A\2665\00A0\2665\00A0\2665";
+}
+.Card.Card-rank-9.Card-hearts .Card-suit:after {
+  content: "\2665\00A0\2665\00A0\2665\A\2665\00A0\2665\00A0\2665\A\2665\00A0\2665\00A0\2665";
+}
+.Card.Card-rank-10.Card-hearts .Card-suit:after {
+  content: "\2665\00A0\2665\00A0\2665\A\2665\00A0\2665\00A0\2665\00A0\2665\A\2665\00A0\2665\00A0\2665";
+}
+
+/* spades */
+.Card.Card-rank-2.Card-spades .Card-suit:after {
+  content: "\2660\A\A\2660";
+}
+.Card.Card-rank-3.Card-spades .Card-suit:after {
+  content: "\2660\A\2660\A\2660";
+}
+.Card.Card-rank-4.Card-spades .Card-suit:after {
+  content: "\2660\00A0\00A0\00A0\2660\A\A\2660\00A0\00A0\00A0\2660";
+}
+.Card.Card-rank-5.Card-spades .Card-suit:after {
+  content: "\2660\00A0\00A0\00A0\2660\A\2660\A\2660\00A0\00A0\00A0\2660";
+}
+.Card.Card-rank-6.Card-spades .Card-suit:after {
+  content: "\2660\00A0\00A0\00A0\2660\A\2660\00A0\00A0\00A0\2660\A\2660\00A0\00A0\00A0\2660";
+}
+.Card.Card-rank-7.Card-spades .Card-suit:after {
+  content: "\2660\00A0\00A0\2660\A\2660\00A0\2660\00A0\2660\A\2660\00A0\00A0\2660";
+}
+.Card.Card-rank-8.Card-spades .Card-suit:after {
+  content: "\2660\00A0\2660\00A0\2660\A\2660\00A0\00A0\2660\A\2660\00A0\2660\00A0\2660";
+}
+.Card.Card-rank-9.Card-spades .Card-suit:after {
+  content: "\2660\00A0\2660\00A0\2660\A\2660\00A0\2660\00A0\2660\A\2660\00A0\2660\00A0\2660";
+}
+.Card.Card-rank-10.Card-spades .Card-suit:after {
+  content: "\2660\00A0\2660\00A0\2660\A\2660\00A0\2660\00A0\2660\00A0\2660\A\2660\00A0\2660\00A0\2660";
+}
+
+/* clubs */
+.Card.Card-rank-2.Card-clubs .Card-suit:after {
+  content: "\2663\A\A\2663";
+}
+.Card.Card-rank-3.Card-clubs .Card-suit:after {
+  content: "\2663\A\2663\A\2663";
+}
+.Card.Card-rank-4.Card-clubs .Card-suit:after {
+  content: "\2663\00A0\00A0\00A0\2663\A\A\2663\00A0\00A0\00A0\2663";
+}
+.Card.Card-rank-5.Card-clubs .Card-suit:after {
+  content: "\2663\00A0\00A0\00A0\2663\A\2663\A\2663\00A0\00A0\00A0\2663";
+}
+.Card.Card-rank-6.Card-clubs .Card-suit:after {
+  content: "\2663\00A0\00A0\00A0\2663\A\2663\00A0\00A0\00A0\2663\A\2663\00A0\00A0\00A0\2663";
+}
+.Card.Card-rank-7.Card-clubs .Card-suit:after {
+  content: "\2663\00A0\00A0\2663\A\2663\00A0\2663\00A0\2663\A\2663\00A0\00A0\2663";
+}
+.Card.Card-rank-8.Card-clubs .Card-suit:after {
+  content: "\2663\00A0\2663\00A0\2663\A\2663\00A0\00A0\2663\A\2663\00A0\2663\00A0\2663";
+}
+.Card.Card-rank-9.Card-clubs .Card-suit:after {
+  content: "\2663\00A0\2663\00A0\2663\A\2663\00A0\2663\00A0\2663\A\2663\00A0\2663\00A0\2663";
+}
+.Card.Card-rank-10.Card-clubs .Card-suit:after {
+  content: "\2663\00A0\2663\00A0\2663\A\2663\00A0\2663\00A0\2663\00A0\2663\A\2663\00A0\2663\00A0\2663";
+}
+
+/*____________ symbols in the middle (faces as images) ____________*/
+
+.Card.Card-rank-j .Card-suit:after,
+.Card.Card-rank-q .Card-suit:after,
+.Card.Card-rank-k .Card-suit:after,
+.Card.Card-rank-a .Card-suit:after,
+.Card.Card-joker .Card-rank:after {
+  font-family: Georgia, serif;
+  position: absolute;
+  font-size: 3em;
+  right: .1em;
+  bottom: .25em;
+  word-spacing: normal;
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+.Card.Card-rank-j .Card-suit:after,
+.Card.Card-rank-q .Card-suit:after,
+.Card.Card-rank-k .Card-suit:after {
+  content: '';
+}
+.Card.Card-rank-j,
+.Card.Card-rank-q,
+.Card.Card-rank-k,
+.Card.Card-joker {
+  background: no-repeat -1em 0;
+  /* @change: smaller cards: more negative distance from the left
+     bigger cards: 0 or more positive distance from the left */
+
+  /* for a centered full background image:
+  background-position: .35em 0;
+  background-size: contain;
+  */
+}
+
+.Card.Card-rank-j.Card-diams  { background-image: url(../../assets/faces/JD.gif); }
+.Card.Card-rank-j.Card-hearts { background-image: url(../../assets/faces/JH.gif); }
+.Card.Card-rank-j.Card-spades { background-image: url(../../assets/faces/JS.gif); }
+.Card.Card-rank-j.Card-clubs  { background-image: url(../../assets/faces/JC.gif); }
+
+.Card.Card-rank-q.Card-diams  { background-image: url(../../assets/faces/QD.gif); }
+.Card.Card-rank-q.Card-hearts { background-image: url(../../assets/faces/QH.gif); }
+.Card.Card-rank-q.Card-spades { background-image: url(../../assets/faces/QS.gif); }
+.Card.Card-rank-q.Card-clubs  { background-image: url(../../assets/faces/QC.gif); }
+
+.Card.Card-rank-k.Card-diams  { background-image: url(../../assets/faces/KD.gif); }
+.Card.Card-rank-k.Card-hearts { background-image: url(../../assets/faces/KH.gif); }
+.Card.Card-rank-k.Card-spades { background-image: url(../../assets/faces/KS.gif); }
+.Card.Card-rank-k.Card-clubs  { background-image: url(../../assets/faces/KC.gif); }
+
+.Card.Card-joker         { background-image: url(../../assets/faces/joker.gif); }
+
+/*.Card.Card-rank-j .Card-suit:after {*/
+/*content: "\265F";*/
+/*right: .15em;*/
+/*}*/
+/*.Card.Card-rank-q .Card-suit:after {*/
+/*content: "\265B";*/
+/*}*/
+/*.Card.Card-rank-k .Card-suit:after {*/
+/*content: "\265A";*/
+/*}*/
+/* joker (inner symbol) */
+.Card.Card-joker .Card-rank:after {
+  content: "";
+}
+.Card.Card-joker .Card-rank:after {
+  position: absolute;
+  content: "\2766";
+  top: .4em;
+  left: .1em;
+}
+
+.Card.Card-rank-a .Card-suit:after {
+  font-family: Arial, sans-serif;
+  line-height: .9;
+  bottom: .35em;
+}
+
+.Card.Card-rank-a.Card-diams .Card-suit:after {
+  content: "\2666";
+  right: .4em;
+}
+
+.Card.Card-rank-a.Card-hearts .Card-suit:after {
+  content: "\2665";
+  right: .35em;
+}
+
+.Card.Card-rank-a.Card-spades .Card-suit:after {
+  content: "\2660";
+  right: .35em;
+}
+
+.Card.Card-rank-a.Card-clubs .Card-suit:after {
+  content: "\2663";
+  right: .3em;
+}
